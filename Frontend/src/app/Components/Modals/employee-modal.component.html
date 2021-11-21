@@ -1,0 +1,76 @@
+<sky-modal>
+  <sky-modal-header>
+    {{this.mode}}
+  </sky-modal-header>
+  <sky-modal-content>
+    <div [formGroup]="group">
+      <div class="sky-form-group" style="max-width: 50%">
+        <label class="sky-control-label">
+          Name
+        </label>
+        <input class="sky-form-control" formControlName="name" id="form-group-first-input-example" type="text">
+
+        <ng-container *ngIf="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.errors['required']" class="sky-error-label">
+            Name is required.
+          </div>
+          <div *ngIf="name.errors['maxlength']" class="sky-error-label">
+            Exceeded max length 50
+          </div>
+          <div *ngIf="name.errors['pattern']" class="sky-error-label">
+            should only contain alphabets
+          </div>
+        </ng-container>
+      </div>
+      <div class="sky-form-group" style="max-width: 50%">
+        <label class="sky-control-label">
+          Date of joining
+        </label>
+        <sky-datepicker>
+          <input class="sky-form-control" formControlName="doj" id="myDate" skyDatepickerInput skyId type="text"
+            #dateInput />
+        </sky-datepicker>
+        <ng-container *ngIf="doj.invalid && (doj.dirty || doj.touched)">
+          <div *ngIf="doj.errors['required']" class="sky-error-label">
+            DOJ is required.
+          </div>
+          <div *ngIf="doj.errors['forbiddenDate']" class="sky-error-label">
+            Date should not exceed today's date
+          </div>
+        </ng-container>
+      </div>
+      <div class="sky-form-group" style="max-width: 50%">
+        <label class="sky-control-label">
+          Experience(In Months)
+        </label>
+        <input class="sky-form-control" formControlName="experience" type="number" min="0">
+        <ng-container *ngIf="experience.invalid && (experience.dirty || experience.touched)">
+          <div *ngIf="experience.errors['required']" class="sky-error-label">
+            Experience is required.
+          </div>
+          <div *ngIf="experience.errors['forbiddenExp']" class="sky-error-label">
+            Experience cannot be negative value
+          </div>
+        </ng-container>
+      </div>
+      <div class="sky-form-group" style="max-width: 50%">
+        <label class="sky-control-label">
+          Skills
+        </label>
+        <sky-lookup formControlName="skills" [data]="skills" [enableShowMore]="true"
+          [searchFilters]="getSearchFilters()">
+        </sky-lookup>
+      </div>
+    </div>
+  </sky-modal-content>
+  <sky-modal-footer>
+    <!-- passing form group to parent component -->
+    <button class="sky-btn sky-btn-primary sky-margin-inline-compact" type="button"
+      [disabled]="!group.dirty||!group.valid" (click)="instance.save(group)">
+      Save
+    </button>
+    <button class="sky-btn sky-btn-link" type="button" (click)="instance.close()">
+      Close
+    </button>
+  </sky-modal-footer>
+</sky-modal>

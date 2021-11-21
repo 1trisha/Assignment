@@ -1,0 +1,20 @@
+<app-nav>
+</app-nav>
+<div style="width: 100%">
+  <sky-toolbar>
+    <sky-toolbar-item>
+      <button class="sky-btn sky-btn-primary" id="edit-btn" (click)="openModal('Add')">
+        Add
+      </button>
+    </sky-toolbar-item>
+    <sky-toolbar-item>
+      <sky-search [searchText]="searchText" [debounceTime]="250" (searchApply)="searchApplied($event)"
+        (searchChange)="searchApplied($event)" (searchClear)="searchApplied($event)"> -->
+      </sky-search>
+    </sky-toolbar-item>
+  </sky-toolbar>
+  <sky-ag-grid-wrapper>
+    <ag-grid-angular class="sky-ag-grid-editable" [gridOptions]="gridOptions" [rowData]="employees">
+    </ag-grid-angular>
+  </sky-ag-grid-wrapper>
+</div>

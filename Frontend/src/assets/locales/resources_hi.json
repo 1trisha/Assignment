@@ -1,0 +1,38 @@
+{
+  "example_string": {
+    "message": "This is an example string",
+    "_description": "The _description property gives context to the translator as to how the string is used in the product"
+  },
+  "app_nav_about": {
+    "message": "About",
+    "_description": "The text for the About top-level navigation item"
+  },
+  "app_nav_home": {
+    "message": "निवास",
+    "_description": "The text for the Home top-level navigation item"
+  },
+  "home_title": {
+    "message": "SKY UX Template",
+    "_description": "Title for the home component"
+  },
+  "string_name": {
+    "message": "उदाहरण",
+    "_description": "A description of the string for the translator."
+  },
+  "Name": {
+    "message": "नाम",
+    "_description": "A description of the string for the translator."
+  },
+  "Experience": {
+    "message": "अनुभव (महीनों में)",
+    "_description": "A description of the string for the translator."
+  },
+  "DOJ": {
+    "message": "शामिल होने की तिथि",
+    "_description": "A description of the string for the translator."
+  },
+  "skills": {
+    "message": "कौशल",
+    "_description": "A description of the string for the translator."
+  }
+}

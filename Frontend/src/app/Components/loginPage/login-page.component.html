@@ -1,0 +1,26 @@
+<sky-card class="centre-align">
+  <sky-card-title>
+    <h1>Login Page</h1>
+  </sky-card-title>
+  <sky-card-content>
+    <ng-container [formGroup]="group">
+      <div class="sky-form-group" style="max-width: 50%">
+        <label class="sky-control-label">
+          Username
+        </label>
+        <input class="sky-form-control" formControlName="username" type="text">
+      </div>
+      <div class="sky-form-group" style="max-width: 50%">
+        <label class="sky-control-label">
+          Passsword
+        </label>
+        <input class="sky-form-control" formControlName="password" type="password">
+      </div>
+    </ng-container>
+  </sky-card-content>
+  <sky-card-actions>
+    <button class="sky-btn sky-btn-default" type="button" (click)="onLoginClick()">
+      Login
+    </button>
+  </sky-card-actions>
+</sky-card>
