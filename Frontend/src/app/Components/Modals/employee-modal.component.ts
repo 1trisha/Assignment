@@ -56,7 +56,6 @@ export class EmployeeModalComponent {
       ])
     });
   }
-  // ["palash","angular"]=>[{name:"Palash"}]
   public getSearchFilters(): SkyAutocompleteSearchFunctionFilter[] {
     return [
       (searchText: string, item: any): boolean => {
